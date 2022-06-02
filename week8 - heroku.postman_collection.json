@@ -1,0 +1,677 @@
+{
+	"info": {
+		"_postman_id": "c11db43a-04ec-47e8-bf5a-26cb25f03845",
+		"name": "week8 - heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "會員功能",
+			"item": [
+				{
+					"name": "註冊會員",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"aaa\",\n    \"email\": \"aaa@gmail.com\",\n    \"confirmPassword\": \"aaaaaaaa1\",\n    \"password\": \"aaaaaaaa1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/sign_up",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "登入會員",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"aaa@gmail.com\",\n    \"password\": \"aaaaaaaa1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/sign_in",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"sign_in"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "重設密碼",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxYzdkOWUxZTJmNmQwMTJlYWZlYiIsIm5hbWUiOiJlbWlseSIsImlhdCI6MTY1NDEzNTk1MSwiZXhwIjoxNjU2ODE0MzUxfQ.Gs3NDg7GlE91gIciUkJF2GvEs1kULNDmUA7JN8JhvSU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"bubububu2\",\n    \"confirmPassword\": \"bubububu2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/updatePassword",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人資料",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxZDJjOWUxZTJmNmQwMTJlYWZmNyIsIm5hbWUiOiJhYWEiLCJpYXQiOjE2NTQxMzYxMTgsImV4cCI6MTY1NjgxNDUxOH0.Fu8NbLB-Cq_pwo7kM-Vc1iYJbbWZCxJIeFMyZXaoHyo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/profile",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "更新個人資料",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxZDJjOWUxZTJmNmQwMTJlYWZmNyIsIm5hbWUiOiJhYWEiLCJpYXQiOjE2NTQxMzYxMTgsImV4cCI6MTY1NjgxNDUxOH0.Fu8NbLB-Cq_pwo7kM-Vc1iYJbbWZCxJIeFMyZXaoHyo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"aaa\",\n    \"gender\": \"male\",\n    \"photo\": \"https://imgur.com/dPhkMGY\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/updateProfile",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"updateProfile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "會員按讚追蹤動態",
+			"item": [
+				{
+					"name": "追蹤朋友",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgwYWM4MTAzODBhNDUyYjdjMmNlMCIsIm5hbWUiOiJidWJ1IiwiaWF0IjoxNjU0MTMxNDI0LCJleHAiOjE2NTY4MDk4MjR9.9PbeskKDU3XiNjXXCdGLjgZlz1eRPZld-HOAqcTsNpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/6296d10631ccb8998b41dab9/follow",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6296d10631ccb8998b41dab9",
+								"follow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消追蹤朋友",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgwYWM4MTAzODBhNDUyYjdjMmNlMCIsIm5hbWUiOiJidWJ1IiwiaWF0IjoxNjU0MTMxNDI0LCJleHAiOjE2NTY4MDk4MjR9.9PbeskKDU3XiNjXXCdGLjgZlz1eRPZld-HOAqcTsNpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"安安222~\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/6296d10631ccb8998b41dab9/unfollow",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"6296d10631ccb8998b41dab9",
+								"unfollow"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人按讚列表",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgwYWM4MTAzODBhNDUyYjdjMmNlMCIsIm5hbWUiOiJidWJ1IiwiaWF0IjoxNjU0MTMxNDI0LCJleHAiOjE2NTY4MDk4MjR9.9PbeskKDU3XiNjXXCdGLjgZlz1eRPZld-HOAqcTsNpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"安安222~\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/getLikeList",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"getLikeList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人追蹤名單",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgwYWM4MTAzODBhNDUyYjdjMmNlMCIsIm5hbWUiOiJidWJ1IiwiaWF0IjoxNjU0MTMxNDI0LCJleHAiOjE2NTY4MDk4MjR9.9PbeskKDU3XiNjXXCdGLjgZlz1eRPZld-HOAqcTsNpU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"安安222~\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/users/following",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"users",
+								"following"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "動態貼文",
+			"item": [
+				{
+					"name": "取得所有貼文",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts?keyword=&timeSort=desc",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": ""
+								},
+								{
+									"key": "timeSort",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得單一貼文",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts/62981dbd9e1e2f6d012eb003",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"62981dbd9e1e2f6d012eb003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增貼文",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"0602 test3\",\n    \"user\": \"62981c7d9e1e2f6d012eafeb\",\n    \"image\": \"https://reurl.cc/OA43Yy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增一則貼文的讚",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxZDJjOWUxZTJmNmQwMTJlYWZmNyIsIm5hbWUiOiJhYWEiLCJpYXQiOjE2NTQxMzYxMTgsImV4cCI6MTY1NjgxNDUxOH0.Fu8NbLB-Cq_pwo7kM-Vc1iYJbbWZCxJIeFMyZXaoHyo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts/62981dbd9e1e2f6d012eb003/like",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"62981dbd9e1e2f6d012eb003",
+								"like"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "新增一則貼文的留言",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxZDJjOWUxZTJmNmQwMTJlYWZmNyIsIm5hbWUiOiJhYWEiLCJpYXQiOjE2NTQxMzYxMTgsImV4cCI6MTY1NjgxNDUxOH0.Fu8NbLB-Cq_pwo7kM-Vc1iYJbbWZCxJIeFMyZXaoHyo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"comment\": \"0602 add comment\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts/62981dbd9e1e2f6d012eb003/comment",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"62981dbd9e1e2f6d012eb003",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取消一則貼文的讚",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxZDJjOWUxZTJmNmQwMTJlYWZmNyIsIm5hbWUiOiJhYWEiLCJpYXQiOjE2NTQxMzYxMTgsImV4cCI6MTY1NjgxNDUxOH0.Fu8NbLB-Cq_pwo7kM-Vc1iYJbbWZCxJIeFMyZXaoHyo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts/62981dbd9e1e2f6d012eb003/unlike",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"62981dbd9e1e2f6d012eb003",
+								"unlike"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "取得個人所有貼文列表",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/posts/user/62981c7d9e1e2f6d012eafeb",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"posts",
+								"user",
+								"62981c7d9e1e2f6d012eafeb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "其他",
+			"item": [
+				{
+					"name": "上傳圖片",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTgxZDJjOWUxZTJmNmQwMTJlYWZmNyIsIm5hbWUiOiJhYWEiLCJwaG90byI6Imh0dHBzOi8vaW1ndXIuY29tL2RQaGtNR1kiLCJpYXQiOjE2NTQxMzcwMjQsImV4cCI6MTY1NjgxNTQyNH0.b0WjffACulic1rLp_kYb5UO4wGCKquGRsyXA3u4PdVQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "yQ6emVm",
+									"type": "file",
+									"src": "/Users/emilyhsi/Desktop/aaa.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://pacific-mountain-61359.herokuapp.com/upload",
+							"protocol": "https",
+							"host": [
+								"pacific-mountain-61359",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "刪除單筆貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://pacific-mountain-61359.herokuapp.com/posts/629820eb77139d96619f2f1a",
+					"protocol": "https",
+					"host": [
+						"pacific-mountain-61359",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"629820eb77139d96619f2f1a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "刪除所有貼文",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://pacific-mountain-61359.herokuapp.com/posts",
+					"protocol": "https",
+					"host": [
+						"pacific-mountain-61359",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "編輯貼文",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"content\": \"aaaaaaa\",\n    \"user\": \"6285a7e275c2d526931aa08e\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pacific-mountain-61359.herokuapp.com/posts/6285aa524c338fd8e4d62931",
+					"protocol": "https",
+					"host": [
+						"pacific-mountain-61359",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"posts",
+						"6285aa524c338fd8e4d62931"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
