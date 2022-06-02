@@ -77,12 +77,13 @@ const posts = {
   }),
   createdComment: handleErrorAsync(async (req, res, next) => {
     const post = req.params.id;
+    console.log(post);
     const user = req.user.id;
     const { comment } = req.body;
     if (!comment) {
       return appError('400', '請填寫留言內容', next);
     }
-    const postId = await User.findById(post).exec();
+    const postId = await Post.findById(post).exec();
     if (!postId) {
       return appError('400', '貼文 id 不存在', next);
     }
